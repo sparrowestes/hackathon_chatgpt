@@ -8,7 +8,7 @@ import nerd from './images/nerd.png';
 
 
 function App() {
-  const value = useState({});
+  const [value, setValue] = useState({});
 
   // const handleChange = (e, { value }) => this.setState({ value })
 
@@ -16,8 +16,8 @@ return (
 <div className="App">
 <Container fluid>
 <div style={{margin: 30}}>
-<Header as='h1'>LLM (this text here is for example of text can delete or change etc)</Header>
-A large language model (LLM) is a type of artificial intelligence (AI) algorithm that uses deep learning techniques and massively large data sets to understand, summarize, generate and predict new content. LLMs can be used to used to enhance communications and student experience through custom messaging.
+<Header as='h1'>Personalized Messaging with ChatGPT</Header>
+Demonstrating how ChatGPT or Large Language Models (LLM) can be utilized to generate custom, personalized messaging to students in order to drive engagement and retention
 
 <Header as='h2'>Meet Our Personas</Header>
 <Grid
@@ -42,9 +42,9 @@ style={{
     <Card>
     <Image src={professor}></Image>
     <Card.Content>
-      <Card.Header>Dr. Anthony "Tony" Marino</Card.Header>
+      <Card.Header>Dr. Victoria Smith</Card.Header>
       <Card.Description>
-      Dr. Anthony "Tony" Marino was born and raised in the heart of Brooklyn, New York. Growing up in a vibrant and diverse neighborhood, he developed a strong New York accent and embraced a distinctive New York attitude. Tony's passion for knowledge and learning led him to pursue a career in academia, where he eventually became a tenured professor at a prestigious university in the city. Tony is fiercely passionate about his subject matter and can captivate a classroom with his engaging teaching style.
+      Dr. Victoria Smith is a proud native of Brooklyn, New York, and has lived in the borough her entire life. She embodies the essence of the city, with a strong New York accent and an unmistakable New York attitude. Growing up in a diverse and vibrant neighborhood, she developed a deep appreciation for the cultural richness and the no-nonsense, straight-talking nature of New Yorkers. She is known for her direct communication style, unapologetically expressing her opinions and challenging the status quo.
       </Card.Description>
     </Card.Content>
   </Card>
@@ -76,20 +76,17 @@ style={{
           <Form.Radio
             label='Coach Bill "Bulldog" Johnson'
             value='coach'
-            checked={value === 'coach'}
-            // onChange={this.handleChange}
+            checked={() => setValue(value)}
           />
           <Form.Radio
-            label='Dr. Anthony "Tony" Marino'
+            label='Dr. Victoria Smith'
             value='professor'
-            checked={value === 'professor'}
-            // onChange={this.handleChange}
+            checked={() => setValue(value)}
           />
           <Form.Radio
             label='Luke, the Star Wars Enthusiast'
             value='nerd'
-            checked={value === 'nerd'}
-            // onChange={this.handleChange}
+            checked={() => setValue(value)}
           />
         </Form.Group>
         <Form.TextArea label='Message to Your Persona' placeholder='What would you like to talk about...' />
